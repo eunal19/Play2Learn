@@ -1,0 +1,282 @@
+
+
+.calculator {
+  padding: 10px;
+  border-radius: 1em;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  background-color: #191b28;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.display-box {
+  background-color: #dcdbe1;
+  border: solid black 0.5px;
+  color: black;
+  border-radius: 5px;
+  width: 100%;
+  height: 65%;
+}
+
+#btn {
+  background-color: #fb0066;
+}
+
+input[type="button"] {
+  font-family: "Orbitron", sans-serif;
+  background-color: #64278f;
+  color: white;
+  border: solid black 0.5px;
+  width: 100%;
+  border-radius: 5px;
+  height: 70%;
+  outline: none;
+}
+
+input:active[type="button"] {
+  background: #e5e5e5;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(209, 215, 228);
+  overflow: scroll;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+nav {
+  background: rgb(137, 157, 221, 0.5);
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  padding: 1px 1px;
+  float: left;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+}
+
+li.contains li {
+  float: none;
+  font-size: 0.8rem;
+}
+
+nav li {
+  float: right;
+}
+
+li.contains ul {
+  display: none;
+  background: rgb(137, 157, 221, 0.5);
+}
+
+nav ul li a {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+li.contains:hover ul {
+  display: inline-block;
+  position: absolute;
+}
+
+nav ul li {
+  display: block;
+  line-height: 55px;
+  margin: 0 10px;
+}
+
+a:hover {
+  background: rgb(137, 157, 221);
+}
+
+#happy {
+  margin: 10px;
+  padding: 10px;
+  font-size: 12px;
+  display: inline-block;
+  text-indent: 40px;
+  height: 5px;
+}
+
+#quote {
+  margin: 10px;
+  padding: 10px;
+  font-size: 12px;
+  display: block;
+  text-indent: 40px;
+  height: 5px;
+  color: green;
+  font-style: italic;
+  min-width: 1000px;
+}
+
+#author {
+  text-align: right;
+  font-size: 12px;
+  margin-right: 60px;
+  padding: 10px;
+  min-width: 500px;
+}
+
+#article1 {
+  width: 300px;
+  margin: 1rem;
+  padding: 1rem;
+  display: inline-block;
+  position: fixed absolute;
+  box-sizing: border-box;
+}
+
+#article2 {
+  width: 300px;
+  margin: 1rem;
+  padding: 1rem;
+  display: inline-block;
+  position: fixed absolute;
+  box-sizing: border-box;
+}
+
+.articles {
+  text-align: center;
+  min-width: 800px;
+}
+
+.contact {
+  text-align: center;
+  min-width: 700px;
+}
+
+.articles p {
+  text-align: left;
+}
+
+.btn {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+  text-decoration: none;
+}
+
+#hr {
+  margin: 0.5rem 4rem 0.5rem 4rem;
+  color: #04aa6d;
+}
+
+#copyright {
+  float: left;
+  font-size: large;
+  margin-left: 3.8rem;
+  text-decoration: none;
+}
+
+#social-media {
+  float: right;
+  font-size: large;
+  margin-right: 4rem;
+  text-decoration: none;
+}
+
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 1rem;
+}
+
+div#about {
+  text-align: start;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+#checkAns {
+  float: none;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #04aa6d;
+  float: right;
+  color: white;
+  border-radius: 5px;
+  border-color: #04aa6d;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  padding: px;
+  width: 300px;
+  display: inline-block;
+}
+
+#subject,
+#email,
+#textarea {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+div.select-wrapper {
+  width: 40%;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  margin-top: 150px;
+}
+.select {
+  width: auto;
+  align-items: center;
+  padding: 3px;
+  font-size: 10pt;
+}
+
+.prg {
+  font-size: 10pt;
+  text-align: left;
+}

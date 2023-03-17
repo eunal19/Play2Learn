@@ -1,0 +1,63 @@
+#hr {
+    margin: 0.5rem 4rem 0.5rem 4rem;
+    color: #04aa6d;
+  }
+  
+  #copyright {
+    display: inline-block;
+    margin-left: 3.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  #social-media {
+    float: right;
+    font-size: large;
+    margin-right: 4rem;
+    text-decoration: none;
+  }
+  
+  #social-media a {
+    text-decoration: none;
+  }
+  
+  footer {
+    position: fixed;
+    width: 100%;
+    bottom: 1rem;
+  }
+
+  div#about {
+  text-align: start;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+#btn {
+  float: right;
+}
+
+
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  float: right;
+  color: white;
+  border-radius: 5px;
+  border-color: #04AA6D;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}

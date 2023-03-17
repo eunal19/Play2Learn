@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Play2Learn</title>
+  <script src="https://kit.fontawesome.com/d01149debc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav>
+    <label class="logo"></label>
+    <img src="/images/Play2Learn.png" alt="Play2Learn Logo" />
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li class="contains"><a href="#">Games</a>
+        <ul>
+          <li><a href="#">Anagram Hunt</a></li>
+          <li><a href="/games/math-facts-practice.html">Math Facts Problem</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+  <section class="contact">
+    <br />
+    <div id="about">
+
+      <div class="container">
+        <h1>Contact Us</h1>
+        <form id="contactForm" method="post" action="submit-form.php">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea><br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <script>
+        const form = document.querySelector('#contactForm');
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const formData = new FormData(event.target);
+          fetch(event.target.action, {
+            method: 'POST',
+            body: formData
+          })
+            .then(response => {
+              if (response.ok) {
+                alert('Thank you for your message!');
+                form.reset();
+              } else {
+                alert('Oops, something went wrong. Please try again later.');
+              }
+            })
+            .catch(error => {
+              console.error(error);
+              alert('Oops, something went wrong. Please try again later.');
+            });
+        });
+      </script>
+  </section>
+  <footer>
+    <hr id="hr">
+    <div id="copyright">&copy; 2020 Play2Learn</div>
+    <div id="social-media">
+      <a class="fa-solid fa-envelope" href="/contact-us.html"></a>
+      <a class="fa-brands fa-instagram" href="https://instagram.com/"></a>
+      <a class="fa-brands fa-twitter" href="https://twitter.com/"></a>
+      <a class="fa-brands fa-facebook" href="https://www.facebook.com/"></a>
+    </div>
+  </footer>
+</body>
+
+</html>

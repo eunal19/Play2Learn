@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="addition.css" />
+    <script src="/calculator.js"></script>
+    <title>Play2Learn</title>
+    <script src="https://kit.fontawesome.com/d01149debc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <label class="logo"></label>
+        <img src="/images/Play2Learn.png" alt="Play2Learn Logo" />
+        <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/login.html">Login</a></li>
+            <li class="contains">
+                <a href="#">Games</a>
+                <ul>
+                    <li><a href="#">Anagram Hunt</a></li>
+                    <li>
+                        <a href="/games/math-facts-practice.html">Math Facts Problem</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/index.html">Home</a></li>
+        </ul>
+    </nav>
+    <section>
+        <br>
+        <br>
+        <div class="box-col">
+
+            <body style="text-align: center">
+                <section>
+                    <h1 style="margin: auto">Math Facts Practice</h1>
+                    <h4 style="text-align: center">Subtraction</h4>
+
+                    <section id="gameSection">
+                        <div>
+                            <span id="intext"></span> - <span id="intext1"></span>
+                            </div>
+                        <table class="calculator" style="align-items:center">
+                            <tr>
+                                <div class="box1" style="text-align: center">
+                                    <td colspan="3">
+                                        <input autofocus class="display-box" type="text" name="" id="result" />
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="btn" type="button" value="1" onclick="display('1')" />
+                                </td>
+                                <td>
+                                    <input id="btn" type="button" value="2" onclick="display('2')" />
+                                </td>
+                                <td>
+                                    <input id="btn" type="button" value="3" onclick="display('3')" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="btn" type="button" value="4" onclick="display('4')" />
+                                </td>
+                                <td>
+                                    <input id="btn" type="button" value="5" onclick="display('5')" />
+                                </td>
+                                <td>
+                                    <input id="btn" type="button" value="6" onclick="display('6')" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="btn" type="button" value="7" onclick="display('7')" />
+                                </td>
+                                <td>
+                                    <input id="btn" type="button" value="8" onclick="display('8')" />
+                                </td>
+                                <td>
+                                    <input id="btn" type="button" value="9" onclick="display('9')" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="btn" type="button" value="0" onclick="display('0')" />
+                                </td>
+                                <td>
+                                    <input id="btn" type="button" value="-" onclick="display('-')" />
+                                </td>
+
+                                <div class="box2">
+                                    <button class="btn" onclick="Game()" id="checkAns"> Check Anwser</button>
+                                </div>
+
+                                <td colspan="3">
+                                    <input id="btn" type="button" value="CLEAR" onclick="clearScreen()" />
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="show-anwser"><span id="ans"></span></div>
+                        <div id="score">Your score: 0</div>
+                        <button class="btn" id="startBtn" onclick="startGame()">START</button>
+                    </section>
+                </section>
+                <div id="timeDisplay" hidden>Time Left: 30</div>
+                <script type="text/javascript" src="script.js"></script>
+                <script>
+                    let n1 = Math.floor(Math.random() * 20 + 1);
+                    let n2 = Math.floor(Math.random() * 20 + 1);
+                    var score = 0;
+                    document.getElementById("intext").innerHTML = n1;
+                    document.getElementById("intext1").innerHTML = n2;
+                    let adds = n1 - n2;
+
+                    function Game() {
+                        var user = document.getElementById("result").value;
+
+                        if (user == adds) {
+                            document.getElementById("ans").innerHTML = "Well Done! Your Answer is Correct";
+                            score++;
+                            document.getElementById("score").innerText = "Your score " + score;
+                        } else {
+                            document.getElementById("ans").innerHTML = "Correct Answer " + adds + " . Try Again";
+                            score--;
+                            document.getElementById("score").innerText = "Your score " + score;
+                        }
+
+                        var user = document.getElementById("result").value = "";
+
+
+                        n1 = Math.floor(Math.random() * 20 + 1);
+                        n2 = Math.floor(Math.random() * 20 + 1);
+
+                        document.getElementById("intext").innerHTML = n1;
+                        document.getElementById("intext1").innerHTML = n2;
+
+                        adds = n1 - n2;
+                    }
+
+                    // This function clear all the values
+                    function clearScreen() {
+                        document.getElementById("result").value = "";
+                    }
+                    // This function display values
+                    function display(value) {
+                        document.getElementById("result").value += value;
+                    }
+
+                    let timeLeft = 30;
+                    let timeInterval;
+                    function startGame() {
+                        document.getElementById("startBtn").disabled = true;
+                        let timeDisplay = document.getElementById('timeDisplay');
+                        timeDisplay.hidden = false;
+                        timeInterval = setInterval(function () {
+                            timeLeft--;
+                            timeDisplay.innerHTML = "Time Left: " + timeLeft;
+                            if (timeLeft == 0) {
+                                clearInterval(timeInterval);
+                                document.getElementById("timeDisplay").innerHTML = `<!DOCTYPE html>
+                                <html lang="en-US">
+                                  <head>
+                                    <h6 style="color:red">Times Up</h6>
+                                  </head>
+                                  <body>
+                                    <h3>Your final score is: </h3>
+                                    <h1>${score}</h1>
+                             
+                                    <a href="/games/math-facts-practice.html" class="btn">Play Again</a>
+                                    </body>
+                                </html>`
+                                
+                                document.getElementById("timeDisplay").style.fontWeight = "600";
+                                document.getElementById("timeDisplay").style.fontSize = "40px";
+                                document.getElementById("gameSection").style.display = "none";
+                                document.getElementById("againBtn").style.display = "block"
+                                document.getElementById("checkAns").disabled = true;
+                            }
+                        }, 1000);
+
+                    }
+                </script>
+
+        </div>
+    </section>
+    <footer>
+        <hr id="hr" />
+        <div id="copyright">&copy; 2020 Play2Learn</div>
+        <div id="social-media">
+            <a class="fa-solid fa-envelope" href="/contact-us.html"></a>
+            <a class="fa-brands fa-instagram" href="https://instagram.com/"></a>
+            <a class="fa-brands fa-twitter" href="https://twitter.com/"></a>
+            <a class="fa-brands fa-facebook" href="https://www.facebook.com/"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

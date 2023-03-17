@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toggle Elements on Dropdown Selection</title>
+  </head>
+  <body>
+    <label for="toggle-dropdown">Select an option:</label>
+    <select id="toggle-dropdown">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+
+    <div id="option1-content" style="display: none;">
+      <p>This is the content for Option 1.</p>
+      
+    </div>
+
+    <div id="option2-content" style="display: none;">
+      <p>This is the content for Option 2.</p>
+    </div>
+
+    <div id="option3-content" style="display: none;">
+      <p>This is the content for Option 3.</p>
+      
+    </div>
+
+    <script>
+      const dropdown = document.getElementById('toggle-dropdown');
+      const option1Content = document.getElementById('option1-content');
+      const option2Content = document.getElementById('option2-content');
+      const option3Content = document.getElementById('option3-content');
+
+      dropdown.addEventListener('change', () => {
+        if (dropdown.value === 'option1') {
+          option1Content.style.display = 'block';
+          option2Content.style.display = 'none';
+          option3Content.style.display = 'none';
+        } else if (dropdown.value === 'option2') {
+          option1Content.style.display = 'none';
+          option2Content.style.display = 'block';
+          option3Content.style.display = 'none';
+        } else if (dropdown.value === 'option3') {
+          option1Content.style.display = 'none';
+          option2Content.style.display = 'none';
+          option3Content.style.display = 'block';
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/calculator.css">
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/calculator.js"></script>
+    <title>Play2Learn</title>
+    <script
+      src="https://kit.fontawesome.com/d01149debc.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <label class="logo"></label>
+      <img src="/images/Play2Learn.png" alt="Play2Learn Logo" />
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/login.html">Login</a></li>
+        <li class="contains">
+          <a href="#">Games</a>
+          <ul>
+              <li><a href="#">Anagram Hunt</a></li>
+            <li>
+              <a href="/games/math-facts-practice.html">Math Facts Problem</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/index.html">Home</a></li>
+      </ul>
+    </nav>
+    <section>
+      <div class="select-wrapper" id="mathgame">
+        <h1>Math Facts Practice</h1>
+        <div id="demo"></div>
+        <div class="select">
+        <label for="toggle-dropdown">Select an operation:</label>
+        <div>
+          <p class="prg">
+            1.Select Operation
+            <br />
+            2. Press <strong>Go</strong>
+            <br />
+            3. How many Problems can you solve in 30 seconds?
+          </p>
+        </div>
+
+<div>
+  <label for="operation-select">Select an operation:</label>
+    <select id="operation-select">
+      <option value="">-- Select --</option>
+      <option value="addition">Addition</option>
+      <option value="division">Division</option>
+      <option value="multiplication">Multiplication</option>
+      <option value="subtraction">Subtraction</option>
+    </select>
+    <button onclick="go()">Go</button>
+    
+    <script>
+      function go() {
+        var selectValue = document.getElementById("operation-select").value;
+        
+        switch (selectValue) {
+          case "addition":
+            window.location.href = "addition.html";
+            break;
+          case "division":
+            window.location.href = "division.html";
+            break;
+          case "multiplication":
+            window.location.href = "multiplication.html";
+            break;
+          case "subtraction":
+            window.location.href = "subtraction.html";
+            break;  
+          default:
+            alert("Please select an operation.");
+        }
+      }
+    </script>
+</div>
+
+      <script>
+          
+      const dropdown = document.getElementById('toggle-dropdown');
+      const additionContent = document.getElementById('addition-content');
+      const subtractionContent = document.getElementById('subtraction-content');
+      const multiplicationContent = document.getElementById('multiplication-content');
+      const divisionContent = document.getElementById('division-content');
+      
+      dropdown.addEventListener('change', () => {
+        if (dropdown.value === 'addition') {
+          additionContent.style.display = 'block';
+          subtractionContent.style.display = 'none';
+          multiplicationContent.style.display = 'none';
+          divisionContent.style.display = 'none';
+        } else if (dropdown.value === 'subtraction') {
+          additionContent.style.display = 'none';
+          subtractionContent.style.display = 'block';
+          multiplicationContent.style.display = 'none';
+          divisionContent.style.display = 'none';
+        } else if (dropdown.value === 'multiplication') {
+          additionContent.style.display = 'none';
+          subtractionContent.style.display = 'none';
+          multiplicationContent.style.display = 'block';
+          divisionContent.style.display = 'none';
+        } else if (dropdown.value === 'division') {
+          additionContent.style.display = 'none';
+          subtractionContent.style.display = 'none';
+          multiplicationContent.style.display = 'none';
+          divisionContent.style.display = 'block';
+        } 
+      });
+    </script>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <hr id="hr" />
+      <div id="copyright">&copy; 2020 Play2Learn</div>
+      <div id="social-media">
+        <a class="fa-solid fa-envelope" href="/contact-us.html"></a>
+        <a class="fa-brands fa-instagram" href="https://instagram.com/"></a>
+        <a class="fa-brands fa-twitter" href="https://twitter.com/"></a>
+        <a class="fa-brands fa-facebook" href="https://www.facebook.com/"></a>
+      </div>
+    </footer>
+  </body>
+  <script></script>
+</html>
